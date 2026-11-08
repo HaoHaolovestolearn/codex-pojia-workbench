@@ -1,4 +1,7 @@
 import ast
+import os
+import subprocess
+import sys
 import http.client
 import json
 import threading
@@ -45,6 +48,13 @@ class CoreTests(unittest.TestCase):
         for suffix in ['/models', '/responses', '/chat/completions']:
             with self.assertRaises(ValueError):
                 w.generate({**self.profile, 'base': 'https://example.com/v1' + suffix})
+
+    def test_cli_handles_legacy_windows_console_encoding(self):
+        environment = dict(os.environ, PYTHONIOENCODING='cp1252')
+        result = subprocess.run([sys.executable, str(w.ROOT / 'workbench.py'), '--help'],
+                                env=environment, capture_output=True, timeout=10)
+        self.assertEqual(result.returncode, 0, result.stderr.decode('utf-8', errors='replace'))
+        self.assertIn('本地开发工具', result.stdout.decode('utf-8'))
 
     def test_cost_decimal_arithmetic(self):
         result = w.estimate({'input_tokens': 2000, 'output_tokens': 1000, 'input_price': 1, 'output_price': 2, 'requests': 100})

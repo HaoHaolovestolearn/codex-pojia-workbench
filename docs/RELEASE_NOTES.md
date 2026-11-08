@@ -1,9 +1,10 @@
-# Codex Pojia Workbench v1.0.0
+# Codex Pojia Workbench v1.0.1
 
-**Codex / codex破甲 / DeepSeek破甲 / 破甲工具箱** 首版。
+**Codex / codex破甲 / DeepSeek破甲 / 破甲工具箱** 首个可下载 Windows 版本。
 
 [Telegram 社群](https://t.me/HaoNB_6666) · [NB破甲官网](https://nbpojia.lol) · [Codex 教程](https://nbpojia.lol/tutorials/armor)
 
+- 修复 Windows CP1252 控制台中文输出导致启动失败的问题。
 - 12 个编程任务模板，支持搜索、上下文填写、复制和 Markdown 导出。
 - Responses / Chat Completions 请求构建，生成 Python、curl、PowerShell、JavaScript 示例。
 - Base URL 与模型字段校验，仅保存非敏感配置。

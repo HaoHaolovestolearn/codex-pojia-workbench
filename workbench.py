@@ -10,7 +10,7 @@ import sys
 from urllib.parse import urlsplit
 import webbrowser
 
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 ROOT = Path(__file__).resolve().parent
 COMMUNITY = {'telegram': 'https://t.me/HaoNB_6666', 'admin': 'https://t.me/HaoNB_666',
              'website': 'https://nbpojia.lol'}
@@ -191,6 +191,9 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main():
+    for stream in (sys.stdout, sys.stderr):
+        if stream is not None and hasattr(stream, 'reconfigure'):
+            stream.reconfigure(encoding='utf-8', errors='backslashreplace')
     parser = argparse.ArgumentParser(description='NB Codex破甲工作台：本地开发工具，无需第三方 Python 依赖。')
     parser.add_argument('--port', type=int, default=8765)
     parser.add_argument('--no-browser', action='store_true')

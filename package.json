@@ -1,6 +1,6 @@
 {
   "name": "codex-pojia-workbench",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Optional browser tests for the Python standard-library workbench",
   "scripts": {"test:ui":"node scripts/browser_smoke.cjs"},
