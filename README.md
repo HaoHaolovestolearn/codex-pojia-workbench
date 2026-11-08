@@ -14,6 +14,12 @@
 
 </div>
 
+## 界面预览
+
+![Codex破甲工作台桌面界面](docs/desktop.webp)
+
+[查看移动端截图](docs/mobile.webp) · 截图来自实际浏览器测试。
+
 ## 这是什么？
 
 Codex Pojia Workbench（NB Codex破甲工作台）把开发前经常重复的准备工作集中到一个本地页面：选模板写清任务、生成 API 调用示例、检查基础配置、估算 Token 费用、查找常见错误的排查方向。
